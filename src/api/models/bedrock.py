@@ -526,14 +526,6 @@ class BedrockModel(BaseChatModel):
                         ),
                     }
                 )
-            elif isinstance(message, DeveloperMessage):
-                # Treat developer messages as user messages
-                messages.append(
-                    {
-                        "role": "user",
-                        "content": [{"text": message.content}],
-                    }
-                )
             elif isinstance(message, AssistantMessage):
                 # Check if message has content that's not empty
                 has_content = False
